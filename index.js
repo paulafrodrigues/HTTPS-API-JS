@@ -22,4 +22,9 @@ server.get('/books/:bookId', (req, res, next) => {
     res.send(req.params);
 });
 
+server.get('/users/:username/books/:bookId', (req, res, next) => {
+    res.send(req.params);
+});
+
+
 server.listen(3000);
