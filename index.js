@@ -11,7 +11,7 @@ server.get('/', function(req, res){
 });
 
 server.get('/about', function(req, res){
-    res.send('about');
+    res.json('about');
 });
 
 server.get('/users/:username', (req, res, next) => {
@@ -25,6 +25,10 @@ server.get('/books/:bookId', (req, res, next) => {
 server.get('/users/:username/books/:bookId', (req, res, next) => {
     res.send(req.params);
 });
+
+server.get('/search', (req, res, next) => {
+    res.send(req.query)
+})
 
 
 server.listen(3000);
